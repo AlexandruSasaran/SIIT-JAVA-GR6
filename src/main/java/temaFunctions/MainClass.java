@@ -1,0 +1,47 @@
+package temaFunctions;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class MainClass {
+    public static void main(String[] args) {
+        SalesRepresentative seller1 = new SalesRepresentative("Andrei", 10, 500);
+        SalesRepresentative seller2 = new SalesRepresentative("Alexandru", 7, 800);
+/**
+ * Cream o lista cu agentii de vanzari
+ */
+        List<SalesRepresentative> sellersList = new ArrayList<>();
+        sellersList.add(seller1);
+        sellersList.add(seller2);
+        System.out.println("Agentii de vanzari sunt: " + sellersList);
+/**
+ * Sortam lista cu ajutorul comparatorului
+ */
+        Collections.sort(sellersList, new SellersRevenueComparator());
+        System.out.println("Agentii de vanzari in ordinea descendenta a incasarilor sunt: " + sellersList);
+/**
+Fac un test pentru mai multi agenti. Am extras codul intr-o metoda.
+ */
+        testLista2(seller1, seller2);
+    }
+
+    private static void testLista2(SalesRepresentative seller1, SalesRepresentative seller2) {
+        SalesRepresentative seller3 = new SalesRepresentative("Mircea", 10, 600);
+        SalesRepresentative seller4 = new SalesRepresentative("Ionut", 1, 2500);
+        SalesRepresentative seller5 = new SalesRepresentative("Paul", 13, 200);
+        SalesRepresentative seller6 = new SalesRepresentative("Sergiu", 8, 1000);
+
+        List<SalesRepresentative> sellersList2 = new ArrayList<>();
+        sellersList2.add(seller1);
+        sellersList2.add(seller2);
+        sellersList2.add(seller3);
+        sellersList2.add(seller4);
+        sellersList2.add(seller5);
+        sellersList2.add(seller6);
+
+        Collections.sort(sellersList2, new SellersRevenueComparator());
+        System.out.println("Agentii de vanzari in ordinea descendenta a incasarilor sunt: ");
+        sellersList2.forEach(System.out::println);
+    }
+}
