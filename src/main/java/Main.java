@@ -1,12 +1,15 @@
-import java.io.IOException;
+import java.sql.*;
 
 public class Main {
+    public static void main(String[] args) {
 
-    public static void main(String[] args) throws IOException {
-        AthleteRepo.readFromFileToList("src/main/resources/AthleteList.csv");
-        AthleteRepo.calculareTimp(AthleteRepo.getAthleteList());
-        AthleteRepo.getCastigatori(AthleteRepo.getAthleteList());
+        AccomodationTable accomodationTable = new AccomodationTable();
+        RoomFairTable roomFairTable = new RoomFairTable();
+        AccomodationFairRelation accomodationFairRelation = new AccomodationFairRelation();
+
+        accomodationTable.start();
+        roomFairTable.start();
+        accomodationFairRelation.start();
+
     }
 }
-
-
