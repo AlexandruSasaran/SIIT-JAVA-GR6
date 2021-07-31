@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Main {
+public class MainClass {
 
     public static void main(String[] args) throws IOException {
         AthleteRepo.readFromFileToList("src/main/resources/AthleteList.csv");
