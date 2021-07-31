@@ -21,7 +21,6 @@ public class Athlete implements Serializable {
         this.thirdShootingRange = thirdShootingRange;
     }
 
-
     public void setTime(String time) {
         this.time = time;
     }
