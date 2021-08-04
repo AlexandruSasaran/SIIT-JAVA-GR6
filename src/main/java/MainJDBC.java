@@ -1,6 +1,4 @@
-import java.sql.*;
-
-public class Main {
+public class MainJDBC {
     public static void main(String[] args) {
 
         AccomodationTable accomodationTable = new AccomodationTable();
